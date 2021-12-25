@@ -37,6 +37,9 @@ class ProductController extends Controller
             'sale_quantity'=>$request->quantity,
             'sale_price'=>$total_price
         ]);
+        $product->update([
+            'quantity'=>$product->quantity-$request->quantity
+        ]);
         return redirect('/');
     }
 

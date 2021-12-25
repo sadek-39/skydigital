@@ -51,8 +51,7 @@ class SaleController extends Controller
     public function show(Sale $sale)
     {
         $sales=Sale::all();
-        // $pdf = PDF::loadView('myPDF', $sales);
-        // return $pdf->download('sales_report.pdf');
+        
         return view('products.sale_report',compact('sales'));
     }
 
