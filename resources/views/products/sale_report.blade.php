@@ -29,6 +29,7 @@
                 @endforeach
             </tbody>
           </table>
+          <a href="{{ route('pdf') }}">PDF</a>
     </div>
 </body>
 </html>

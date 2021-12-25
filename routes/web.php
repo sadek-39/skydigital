@@ -25,3 +25,4 @@ Route::get('/', [ProductController::class, 'index']);
 Route::get('/sell/{id}', [ProductController::class, 'Sell_view'])->name('product_sell');
 Route::get('/sale_report', [SaleController::class, 'show'])->name('sale_report');
 Route::post('/sell_item/{id}', [ProductController::class, 'Sell_data'])->name('product_sell_data');
+Route::get('/pdf', [SaleController::class, 'pdf'])->name('pdf');

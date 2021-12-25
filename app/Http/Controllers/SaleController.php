@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sale;
+use Barryvdh\DomPDF\PDF as PDF;
 use Illuminate\Http\Request;
-use PDF;
+
 
 class SaleController extends Controller
 {
@@ -29,6 +30,14 @@ class SaleController extends Controller
     public function create()
     {
         //
+    }
+    public function pdf()
+    {
+        $sales=Sale::all();
+        $pdf = app('dompdf.wrapper');
+        $pdf->loadView('products.sale_report',compact('sales'));
+        //$pdf=PDF::loadView('products.sale_report');
+        return $pdf->download('sales_report.pdf');
     }
 
     /**
